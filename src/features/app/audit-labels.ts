@@ -1,0 +1,22 @@
+/** Libellés des événements du journal d'audit visibles par l'utilisateur. */
+export const AUDIT_LABELS: Record<string, string> = {
+  'auth.password_changed': 'Mot de passe modifié',
+  'auth.mfa_enabled': 'Double authentification activée',
+  'auth.mfa_disabled': 'Double authentification désactivée',
+  'auth.sessions_revoked': 'Déconnexion de tous les appareils',
+  'data.export': 'Export de vos données',
+  'data.report_exported': 'Bilan mensuel téléchargé en PDF',
+  'support.access_granted': 'Accès accordé à l’assistance',
+  'support.access_revoked': 'Accès de l’assistance retiré',
+  'support.user_viewed': 'Consultation de votre dossier par l’assistance',
+  'billing.checkout_completed': 'Souscription à Premium',
+  'billing.subscription_changed': 'Abonnement mis à jour',
+  'billing.payment_failed': 'Échec de paiement',
+  'billing.refunded': 'Remboursement',
+  'billing.checkout_started': 'Paiement de l’abonnement commencé',
+  'billing.renewal_reminder': 'Rappel avant renouvellement annuel',
+  'admin.user_search': 'Recherche d’un compte (administration)',
+  'admin.role_granted': 'Rôle d’équipe attribué',
+  'admin.role_revoked': 'Rôle d’équipe retiré',
+  'account.deleted': 'Compte supprimé',
+}

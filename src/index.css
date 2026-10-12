@@ -1,0 +1,74 @@
+@import '@fontsource-variable/inter';
+@import 'tailwindcss';
+
+/* ============================================================
+   Economiz — design tokens
+   Une seule couleur de marque (bleu encre), trois couleurs de statut.
+   ============================================================ */
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: oklch(0.985 0.002 260);
+  --color-surface: oklch(1 0 0);
+  --color-foreground: oklch(0.21 0.02 265);
+  --color-muted: oklch(0.96 0.004 260);
+  --color-muted-foreground: oklch(0.46 0.02 265);
+  --color-border: oklch(0.92 0.006 260);
+  --color-ring: oklch(0.52 0.19 264);
+
+  --color-primary: oklch(0.47 0.19 264);
+  --color-primary-hover: oklch(0.42 0.18 264);
+  --color-primary-foreground: oklch(0.99 0 0);
+  --color-primary-soft: oklch(0.95 0.03 264);
+
+  --color-success: oklch(0.47 0.12 155);
+  --color-success-soft: oklch(0.96 0.04 155);
+  --color-warning: oklch(0.5 0.13 55);
+  --color-warning-soft: oklch(0.97 0.05 75);
+  --color-danger: oklch(0.52 0.2 27);
+  --color-danger-hover: oklch(0.46 0.19 27);
+  --color-danger-soft: oklch(0.96 0.03 25);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-card: 0 1px 2px oklch(0.2 0.02 265 / 0.04), 0 1px 3px oklch(0.2 0.02 265 / 0.06);
+  --shadow-raised: 0 4px 12px oklch(0.2 0.02 265 / 0.06), 0 12px 32px oklch(0.2 0.02 265 / 0.08);
+
+  --animate-spin-fast: spin 0.7s linear infinite;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  ::selection {
+    @apply bg-primary-soft;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

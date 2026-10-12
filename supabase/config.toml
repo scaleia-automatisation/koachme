@@ -1,0 +1,27 @@
+# Configuration Supabase CLI (déploiement des Edge Functions uniquement).
+project_id = "economiz"
+
+[functions.process-statement]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true
+
+[functions.coach]
+verify_jwt = true
+
+[functions.billing-checkout]
+verify_jwt = true
+
+[functions.billing-portal]
+verify_jwt = true
+
+[functions.report-pdf]
+verify_jwt = true
+
+# Appelées par Stripe et pg_cron : authentifiées par signature / secret partagé.
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.maintenance]
+verify_jwt = false
